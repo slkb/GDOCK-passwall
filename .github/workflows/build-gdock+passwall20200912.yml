@@ -110,5 +110,14 @@ jobs:
     - name : Upload artifact
       uses: actions/upload-artifact@master
       with: 
-        name: G-DOCK+passwall-20200912
-        path: ./lede/bin
+        name: G-DOCK+passwall-packages
+        path: ./lede/bin/packages
+
+    - name : Upload artifact
+      uses: actions/upload-artifact@master
+      with: 
+        name: G-DOCK+passwall-targets
+        path: ./lede/bin/targets
+        
+    - name: 通知
+      run: curl "https://sc.ftqq.com/SCU57843T2ff932ee139ac5d34c0e18bd1836b7945d5ab38719b19.send?text=GDOCK"
